@@ -1,6 +1,7 @@
 from turtle import Screen, Turtle
 
 from board import Board
+from net import Net
 
 TABLE_COLOR = "black"
 GAME_TITLE = "Pong Game"
@@ -16,15 +17,7 @@ screen.title(GAME_TITLE)
 screen.tracer(0)
 screen.listen()
 
-y = -500
-for _ in range(20):
-    net = Turtle()
-    net.penup()
-    net.color("white")
-    net.setposition(x=0, y=y)
-    net.shape('square')
-    net.shapesize(stretch_wid=1, stretch_len=0.5)
-    y += 50
+net = Net()
 
 board1 = Board(x=-700, y=400)
 board2 = Board(x=700, y=-400)

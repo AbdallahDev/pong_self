@@ -1,7 +1,13 @@
-from turtle import Turtle
+from line import Line
 
 
-class Net(Turtle):
+def create_net():
+    y = -500
+    for _ in range(20):
+        line = Line(y=y)
+        y += 50
+
+
+class Net:
     def __init__(self):
-        super().__init__()
-        self.self.ycor = 1
+        create_net()

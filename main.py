@@ -9,6 +9,12 @@ TABLE_WIDTH = 1500
 TABLE_HEIGHT = 1000
 TABLE_TOP_EDGE = TABLE_HEIGHT / 2
 TABLE_LEFT_EDGE = -(TABLE_WIDTH / 2)
+BOARD_XCOR = 700
+BOARD_YCOR = 400
+BOARD1_UP_KEY = 'w'
+BOARD1_DOWN_KEY = 's'
+BOARD2_UP_KEY = 'Up'
+BOARD2_DOWN_KEY = 'Down'
 
 screen = Screen()
 screen.setup(width=TABLE_WIDTH, height=TABLE_HEIGHT)
@@ -19,16 +25,14 @@ screen.listen()
 
 net = Net()
 
-board1 = Board(x=-700, y=400)
-board2 = Board(x=700, y=-400)
+board1 = Board(x=-BOARD_XCOR, y=BOARD_YCOR)
+board2 = Board(x=BOARD_XCOR, y=-BOARD_YCOR)
 
 while True:
-    screen.onkey(fun=board1.up, key="w")
-    screen.onkey(fun=board1.down, key="s")
+    screen.onkey(fun=board1.up, key=BOARD1_UP_KEY)
+    screen.onkey(fun=board1.down, key=BOARD1_DOWN_KEY)
 
-    screen.onkey(fun=board2.up, key="Up")
-    screen.onkey(fun=board2.down, key="Down")
+    screen.onkey(fun=board2.up, key=BOARD2_UP_KEY)
+    screen.onkey(fun=board2.down, key=BOARD2_DOWN_KEY)
 
     screen.update()
-
-screen.exitonclick()

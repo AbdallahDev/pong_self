@@ -67,4 +67,3 @@ def game():
 
 while True:
     game()
-screen.exitonclick()
